@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   }
   
   s.author       = { "Joel Levin" => "joel@joeldev.com" }
-  s.source       = { :git => "https://github.com/joeldev/JLRoutes.git", :tag => "1.4" }
+  s.source       = { :git => "https://github.com/fjbelchi/JLRoutes.git", :tag => "1.4" }
 
   s.source_files = 'JLRoutes', 'JLRoutes/*.{h,m}'
   s.framework  = 'Foundation'

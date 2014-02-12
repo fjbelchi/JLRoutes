@@ -68,7 +68,7 @@ static BOOL verboseLoggingEnabled = NO;
 
 @property (weak) JLRoutes *parentRoutesController;
 @property (strong) NSString *pattern;
-@property (strong) BOOL (^block)(NSDictionary *parameters);
+@property (strong) BOOL (^block)(NSURL *url,NSDictionary *parameters);
 @property (assign) NSUInteger priority;
 @property (strong) NSArray *patternPathComponents;
 
@@ -341,7 +341,7 @@ static BOOL verboseLoggingEnabled = NO;
 			finalParameters[kJLRouteNamespaceKey] = route.parentRoutesController.namespaceKey ?: [NSNull null];
 
 			[self verboseLogWithFormat:@"Final parameters are %@", finalParameters];
-			didRoute = route.block(finalParameters);
+			didRoute = route.block(URL,finalParameters);
 			if (didRoute) {
 				break;
 			}
